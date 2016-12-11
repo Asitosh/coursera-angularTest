@@ -10,13 +10,14 @@ function LunchCheckController($scope) {
   $scope.lunchMenu = "";
 
   $scope.checkLunch = function () {
-    if($scope.lunchMenu.split(",").length==0){
+    if($scope.lunchMenu==""){
       $scope.message ="Please enter data first";
-    }
-    if($scope.lunchMenu.split(",").length>0&&$scope.lunchMenu.split(",").length<=3){
-      $scope.message ="Enjoy!";
     }else {
-      $scope.message ="Too much!";
+      if($scope.lunchMenu.split(",").length>0&&$scope.lunchMenu.split(",").length<=3){
+        $scope.message ="Enjoy!";
+      }else {
+        $scope.message ="Too much!";
+      }
     }
     //console.console.log("fucYOU");
   };
